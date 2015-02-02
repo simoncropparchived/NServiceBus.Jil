@@ -30,6 +30,7 @@
         {
             var streamWriter = new StreamWriter(stream);
             JSON.Serialize(message, streamWriter, Options);
+            streamWriter.Flush();
         }
 
         /// <summary>
