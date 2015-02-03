@@ -5,9 +5,9 @@ NServiceBus.Jil
 
 Add support for [NServiceBus](http://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
-## Nuget
+## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
-### http://nuget.org/packages/NServiceBus.Jil/
+https://nuget.org/packages/NServiceBus.Jil/
 
     PM> Install-Package NServiceBus.Jil
 
