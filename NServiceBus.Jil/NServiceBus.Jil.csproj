@@ -34,11 +34,13 @@
     <DocumentationFile>bin\Release\NServiceBus.Jil.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jil">
-      <HintPath>..\packages\Jil.2.7.2\lib\net45\Jil.dll</HintPath>
+    <Reference Include="Jil, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Jil.2.9.0\lib\net45\Jil.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\packages\NServiceBus.5.1.2\lib\net45\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sigil">
       <HintPath>..\packages\Sigil.4.4.0\lib\net45\Sigil.dll</HintPath>
