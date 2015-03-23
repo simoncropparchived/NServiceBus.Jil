@@ -18,7 +18,7 @@
         /// </summary>
         public JsonMessageSerializer()
         {
-            Options = new Options();
+            Options = JSON.GetDefaultOptions();
         }
 
         /// <summary>
