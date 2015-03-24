@@ -18,6 +18,10 @@ var busConfig = new BusConfiguration();
 busConfig.UseSerialization<JilSerializer>();
 ```
 
+## Currently not supported
+
+* Usages of `DataBusProperty<T>` since it doesn't have a default constructor.  
+
 ## Icon
 
 <a href="http://thenounproject.com/term/eagle/58506/" target="_blank">Eagle</a> designed by <a href="http://thenounproject.com/mte/" target="_blank">m. turan ercan</a> from The Noun Project

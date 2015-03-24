@@ -5,6 +5,7 @@
     using System.IO;
     using System.Linq;
     using global::Jil;
+    using NServiceBus.MessageInterfaces;
     using NServiceBus.Serialization;
 
     /// <summary>
@@ -12,13 +13,15 @@
     /// </summary>
     public class JsonMessageSerializer : IMessageSerializer
     {
+        IMessageMapper messageMapper;
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public JsonMessageSerializer()
+        public JsonMessageSerializer(IMessageMapper messageMapper)
         {
-            Options = JSON.GetDefaultOptions();
+            this.messageMapper = messageMapper;
+            Options = new Options(false, false, false, DateTimeFormat.NewtonsoftStyleMillisecondsSinceUnixEpoch, true); 
         }
 
         /// <summary>
@@ -29,7 +32,7 @@
         public void Serialize(object message, Stream stream)
         {
             var streamWriter = new StreamWriter(stream);
-            JSON.Serialize(message, streamWriter, Options);
+            JSON.SerializeDynamic(message, streamWriter, Options);
             streamWriter.Flush();
         }
 
@@ -41,17 +44,44 @@
         /// <returns>Deserialized messages.</returns>
         public object[] Deserialize(Stream stream, IList<Type> messageTypes)
         {
-            if (messageTypes.Count > 1)
+            if (messageTypes == null || !messageTypes.Any())
             {
-                throw new Exception("Batch messages are not supported. Feel free to send a Pull Request.");
+                throw new Exception("Jil requires message types to be specified");
             }
-            var streamReader = new StreamReader(stream);
-            return new[]
-                   {
-                       JSON.Deserialize(streamReader, messageTypes.First(), Options)
-                   };
+            var rootTypes = FindRootTypes(messageTypes);
+            return rootTypes.Select(rootType =>
+            {
+                var messageType = GetMappedType(rootType);
+                stream.Seek(0, SeekOrigin.Begin);
+                var streamReader = new StreamReader(stream);
+                return JSON.Deserialize(streamReader, messageType, Options);
+            }).ToArray();
         }
 
+        Type GetMappedType(Type serializedType)
+        {
+            return messageMapper.GetMappedTypeFor(serializedType) ?? serializedType;
+        }
+
+
+        static IEnumerable<Type> FindRootTypes(IEnumerable<Type> messageTypesToDeserialize)
+        {
+            Type currentRoot = null;
+            foreach (var type in messageTypesToDeserialize)
+            {
+                if (currentRoot == null)
+                {
+                    currentRoot = type;
+                    yield return currentRoot;
+                    continue;
+                }
+                if (!type.IsAssignableFrom(currentRoot))
+                {
+                    currentRoot = type;
+                    yield return currentRoot;
+                }
+            }
+        }
         /// <summary>
         /// Gets the content type into which this serializer serializes the content to 
         /// </summary>
