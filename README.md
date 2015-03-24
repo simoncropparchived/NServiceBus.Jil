@@ -18,6 +18,16 @@ var busConfig = new BusConfiguration();
 busConfig.UseSerialization<JilSerializer>();
 ```
 
+### Customisation 
+
+
+    busConfig.UseSerialization<JilSerializer>()
+        .Options(
+            new Options(
+                prettyPrint: true,
+                excludeNulls: true,
+                includeInherited: true));
+
 ## Currently not supported
 
 * Usages of `DataBusProperty<T>` since it doesn't have a default constructor.  
