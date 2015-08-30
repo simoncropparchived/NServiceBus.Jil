@@ -112,8 +112,6 @@
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\Config\When_IWantToRunWhenBusStartsAndStops_Start_throws.cs" />
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\Config\When__startup_is_complete.cs" />
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\CriticalError\When_registering_a_custom_criticalErrorHandler.cs" />
-    <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\DataBus\When_sending_databus_properties.cs" />
-    <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\DataBus\When_using_custom_IDataBus.cs" />
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\DeterministicGuid.cs" />
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\Encryption\When_using_encryption_with_custom_service.cs" />
     <Compile Include="App_Packages\NSB.AcceptanceTests.5.2.5\Encryption\When_using_Rijndael_with_config.cs" />

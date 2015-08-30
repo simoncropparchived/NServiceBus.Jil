@@ -5,11 +5,13 @@ NServiceBus.Jil
 
 Add support for [NServiceBus](http://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
+
 ## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
 https://nuget.org/packages/NServiceBus.Jil/
 
     PM> Install-Package NServiceBus.Jil
+
 
 ## Usage
 
@@ -17,6 +19,7 @@ https://nuget.org/packages/NServiceBus.Jil/
 var busConfig = new BusConfiguration();
 busConfig.UseSerialization<JilSerializer>();
 ```
+
 
 ### Customisation 
 
@@ -28,9 +31,11 @@ busConfig.UseSerialization<JilSerializer>();
                 excludeNulls: true,
                 includeInherited: true));
 
+
 ## Currently not supported
 
-Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the databus convention is supported.  
+Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the databus convention is supported.
+  
 
 ## Icon
 
