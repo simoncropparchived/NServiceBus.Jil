@@ -4,7 +4,7 @@ using NServiceBus.Jil;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         var busConfig = new BusConfiguration();
         busConfig.EndpointName("JilSerializer.Perf.Jil");

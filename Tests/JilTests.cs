@@ -5,24 +5,25 @@ using NUnit.Framework;
 [TestFixture]
 class JilTests
 {
-        Options options= new Options(false, false, false, DateTimeFormat.NewtonsoftStyleMillisecondsSinceUnixEpoch, true); 
+    Options options = new Options(false, false, false, DateTimeFormat.NewtonsoftStyleMillisecondsSinceUnixEpoch, true);
 
     [Test]
     public void Simple()
     {
-        var serialize = JSON.Serialize(new Person()
-                                              {
-                                                  Name = "Simon"
-                                              }, options);
+        var serialize = JSON.Serialize(new Person
+        {
+            Name = "Simon"
+        }, options);
         Trace.WriteLine(serialize);
     }
+
     [Test]
     public void Inherited()
     {
-        var serialize = JSON.Serialize(new Child()
-                                              {
-                                                  Name = "Simon"
-                                              }, options);
+        var serialize = JSON.Serialize(new Child
+        {
+            Name = "Simon"
+        }, options);
         Trace.WriteLine(serialize);
     }
 }

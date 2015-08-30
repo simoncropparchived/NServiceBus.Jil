@@ -1,10 +1,9 @@
-﻿
-    using NServiceBus;
-    using NServiceBus.Features;
+﻿using NServiceBus;
+using NServiceBus.Features;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         var busConfig = new BusConfiguration();
         busConfig.EndpointName("JilSerializer.Perf.Core");

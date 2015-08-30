@@ -1,7 +1,7 @@
 ﻿namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
     using System.Collections.Generic;
-    using NServiceBus.Jil;
+    using Jil;
 
     public partial class DefaultServer
     {

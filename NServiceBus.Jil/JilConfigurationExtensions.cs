@@ -2,9 +2,9 @@
 {
     using System;
     using global::Jil;
-    using NServiceBus.Configuration.AdvanceExtensibility;
-    using NServiceBus.Jil;
-    using NServiceBus.Serialization;
+    using Configuration.AdvanceExtensibility;
+    using Jil;
+    using Serialization;
 
     public static class JilConfigurationExtensions
     {

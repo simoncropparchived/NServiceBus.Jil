@@ -20,8 +20,9 @@ namespace NServiceBus.Jil
         /// </summary>
         protected override void Setup(FeatureConfigurationContext context)
         {
-            context.Container.ConfigureComponent<MessageMapper>(DependencyLifecycle.SingleInstance);
-            var c = context.Container.ConfigureComponent<JsonMessageSerializer>(DependencyLifecycle.SingleInstance);
+            var container = context.Container;
+            container.ConfigureComponent<MessageMapper>(DependencyLifecycle.SingleInstance);
+            var c = container.ConfigureComponent<JsonMessageSerializer>(DependencyLifecycle.SingleInstance);
 
             context.Settings.ApplyTo<JsonMessageSerializer>((IComponentConfig)c);
         }

@@ -5,8 +5,8 @@
     using System.IO;
     using System.Linq;
     using global::Jil;
-    using NServiceBus.MessageInterfaces;
-    using NServiceBus.Serialization;
+    using MessageInterfaces;
+    using Serialization;
 
     /// <summary>
     /// JSON message serializer.

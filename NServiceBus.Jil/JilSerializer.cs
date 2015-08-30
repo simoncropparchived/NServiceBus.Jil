@@ -1,7 +1,7 @@
 ﻿namespace NServiceBus.Jil
 {
     using System;
-    using NServiceBus.Serialization;
+    using Serialization;
 
     /// <summary>
     /// Defines the capabilities of the JSON serializer
