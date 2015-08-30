@@ -20,8 +20,7 @@
             {
                 throw new ArgumentNullException("options");
             }
-            config.GetSettings()
-                .SetProperty<JsonMessageSerializer>(s => s.Options, options);
+            config.GetSettings().Set<Options>(options);
         }
     }
 }

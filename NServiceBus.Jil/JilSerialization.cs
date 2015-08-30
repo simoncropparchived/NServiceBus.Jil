@@ -1,6 +1,7 @@
-﻿using NServiceBus.Features;
+﻿using Jil;
+using NServiceBus.Features;
+using NServiceBus.MessageInterfaces;
 using NServiceBus.MessageInterfaces.MessageMapper.Reflection;
-using NServiceBus.ObjectBuilder;
 
 namespace NServiceBus.Jil
 {
@@ -22,9 +23,16 @@ namespace NServiceBus.Jil
         {
             var container = context.Container;
             container.ConfigureComponent<MessageMapper>(DependencyLifecycle.SingleInstance);
-            var c = container.ConfigureComponent<JsonMessageSerializer>(DependencyLifecycle.SingleInstance);
-
-            context.Settings.ApplyTo<JsonMessageSerializer>((IComponentConfig)c);
+            Options options;
+            if (!context.Settings.TryGet(out options))
+            {
+                options = Options.Default;
+            }
+            container.ConfigureComponent(builder =>
+            {
+                var messageMapper = builder.Build<IMessageMapper>();
+                return new JsonMessageSerializer(messageMapper,options);
+            }, DependencyLifecycle.SingleInstance);
         }
     }
 }

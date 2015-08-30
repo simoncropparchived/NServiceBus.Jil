@@ -18,10 +18,18 @@
         /// <summary>
         /// Constructor.
         /// </summary>
-        public JsonMessageSerializer(IMessageMapper messageMapper)
+        public JsonMessageSerializer(IMessageMapper messageMapper, Options options = null)
         {
             this.messageMapper = messageMapper;
-            Options = new Options(false, false, false, DateTimeFormat.NewtonsoftStyleMillisecondsSinceUnixEpoch, true); 
+            
+            if (options == null)
+            {
+                this.options = Options.Default;
+            }
+            else
+            {
+                this.options = options;
+            }
         }
 
         /// <summary>
@@ -32,7 +40,7 @@
         public void Serialize(object message, Stream stream)
         {
             var streamWriter = new StreamWriter(stream);
-            JSON.SerializeDynamic(message, streamWriter, Options);
+            JSON.SerializeDynamic(message, streamWriter, options);
             streamWriter.Flush();
         }
 
@@ -54,7 +62,7 @@
                 var messageType = GetMappedType(rootType);
                 stream.Seek(0, SeekOrigin.Begin);
                 var streamReader = new StreamReader(stream);
-                return JSON.Deserialize(streamReader, messageType, Options);
+                return JSON.Deserialize(streamReader, messageType, options);
             }).ToArray();
         }
 
@@ -90,6 +98,6 @@
             get { return ContentTypes.Json; }
         }
 
-        public Options Options { get; set; }
+        Options options;
     }
 }
