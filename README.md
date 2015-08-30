@@ -30,7 +30,7 @@ busConfig.UseSerialization<JilSerializer>();
 
 ## Currently not supported
 
-* Usages of `DataBusProperty<T>` since it doesn't have a default constructor.  
+Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the databus convention is supported.  
 
 ## Icon
 

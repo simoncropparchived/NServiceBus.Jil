@@ -5,7 +5,6 @@
     using NServiceBus.AcceptanceTests.EndpointTemplates;
     using NServiceBus.Saga;
     using NUnit.Framework;
-    using System.Threading;
 
     [TestFixture]
     public class When_a_base_class_message_hits_a_saga
