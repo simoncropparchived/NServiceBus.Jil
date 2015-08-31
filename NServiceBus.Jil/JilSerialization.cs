@@ -13,7 +13,7 @@ namespace NServiceBus.Jil
         internal JilSerialization()
         {
             EnableByDefault();
-            Prerequisite(this.ShouldSerializationFeatureBeEnabled, "JilSerialization not enable since serialization definition not detected.");
+            Prerequisite(this.ShouldSerializationFeatureBeEnabled, "JilSerialization not enabled since serialization definition not detected.");
         }
 
         /// <summary>
