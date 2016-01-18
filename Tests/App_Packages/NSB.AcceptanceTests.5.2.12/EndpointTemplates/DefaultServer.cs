@@ -51,8 +51,13 @@
                 r.RegisterSingleton(typeof(ScenarioContext), runDescriptor.ScenarioContext);
             });
 
+       
+            var serializer = settings.GetOrNull("Serializer");
 
-            SetSerializer(settings, builder);
+            if (serializer != null)
+            {
+                builder.UseSerialization(Type.GetType(serializer));
+            }
             builder.DefinePersistence(settings);
 
             builder.GetSettings().SetDefault("ScaleOut.UseSingleBrokerQueue", true);
