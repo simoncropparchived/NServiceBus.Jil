@@ -1,27 +1,30 @@
-﻿namespace NServiceBus.Jil
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using global::Jil;
-    using MessageInterfaces;
-    using Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using Jil;
+using NServiceBus.MessageInterfaces;
+using NServiceBus.Serialization;
 
-    /// <summary>
-    /// JSON message serializer.
-    /// </summary>
-    public class JsonMessageSerializer : IMessageSerializer
+namespace NServiceBus.Jil
+{
+
+    class JsonMessageSerializer : IMessageSerializer
     {
         IMessageMapper messageMapper;
+        Func<Stream, TextReader> readerCreator;
+        Func<Stream, TextWriter> writerCreator;
 
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public JsonMessageSerializer(IMessageMapper messageMapper, Options options = null)
+        public JsonMessageSerializer(
+            IMessageMapper messageMapper,
+            Options options,
+            string contentType,
+            Func<Stream, TextReader> readerCreator,
+            Func<Stream, TextWriter> writerCreator)
         {
             this.messageMapper = messageMapper;
-            
+
             if (options == null)
             {
                 this.options = Options.Default;
@@ -30,26 +33,36 @@
             {
                 this.options = options;
             }
+
+            if (contentType == null)
+            {
+                ContentType = ContentTypes.Json;
+            }
+            else
+            {
+                ContentType = contentType;
+            }
+
+
+            this.writerCreator = writerCreator ?? (stream =>
+            {
+                return new StreamWriter(stream, Encoding.UTF8, 1024,true);
+            });
+
+            this.readerCreator = readerCreator ?? (stream =>
+            {
+                return new StreamReader(stream, Encoding.UTF8,true, 1024, true);
+            });
         }
 
-        /// <summary>
-        /// Serializes the given set of messages into the given stream.
-        /// </summary>
-        /// <param name="message">Message to serialize.</param>
-        /// <param name="stream">Stream for <paramref name="message"/> to be serialized into.</param>
         public void Serialize(object message, Stream stream)
         {
-            var streamWriter = new StreamWriter(stream);
-            JSON.SerializeDynamic(message, streamWriter, options);
-            streamWriter.Flush();
+            using (var streamWriter = writerCreator(stream))
+            {
+                JSON.Serialize(message, streamWriter, options);
+            }
         }
 
-        /// <summary>
-        /// Deserializes from the given stream a set of messages.
-        /// </summary>
-        /// <param name="stream">Stream that contains messages.</param>
-        /// <param name="messageTypes">The list of message types to deserialize. If null the types must be inferred from the serialized data.</param>
-        /// <returns>Deserialized messages.</returns>
         public object[] Deserialize(Stream stream, IList<Type> messageTypes)
         {
             if (messageTypes == null || !messageTypes.Any())
@@ -58,12 +71,15 @@
             }
             var rootTypes = FindRootTypes(messageTypes);
             return rootTypes.Select(rootType =>
-            {
-                var messageType = GetMappedType(rootType);
-                stream.Seek(0, SeekOrigin.Begin);
-                var streamReader = new StreamReader(stream);
-                return JSON.Deserialize(streamReader, messageType, options);
-            }).ToArray();
+                {
+                    var messageType = GetMappedType(rootType);
+                    stream.Seek(0, SeekOrigin.Begin);
+                    using (var streamReader = readerCreator(stream))
+                    {
+                        return JSON.Deserialize(streamReader, messageType, options);
+                    }
+                })
+                .ToArray();
         }
 
         Type GetMappedType(Type serializedType)
@@ -90,10 +106,8 @@
                 }
             }
         }
-        /// <summary>
-        /// Gets the content type into which this serializer serializes the content to 
-        /// </summary>
-        public string ContentType => ContentTypes.Json;
+
+        public string ContentType { get; }
 
         Options options;
     }

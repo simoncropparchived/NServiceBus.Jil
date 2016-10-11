@@ -34,8 +34,8 @@ busConfig.UseSerialization<JilSerializer>();
 
 ## Currently not supported
 
-Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the [databus convention](http://docs.particular.net/nservicebus/messaging/databus) is supported. 
-  
+Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
+
 
 ## Icon
 

@@ -1,22 +1,33 @@
-﻿using NServiceBus;
+﻿using System.Threading.Tasks;
+using NServiceBus;
 using NServiceBus.Features;
 
 class Program
 {
     static void Main()
     {
-        var busConfig = new BusConfiguration();
-        busConfig.EndpointName("JilSerializer.Perf.Core");
-        busConfig.UseSerialization<JsonSerializer>();
-        busConfig.EnableInstallers();
-        busConfig.PurgeOnStartup(true);
-        busConfig.UsePersistence<InMemoryPersistence>();
-        busConfig.UseTransport<MsmqTransport>().ConnectionString("deadLetter=false;journal=false");
-        busConfig.DisableFeature<Audit>();
-        using (var bus = Bus.Create(busConfig))
+        AsyncMain().GetAwaiter().GetResult();
+    }
+
+    static async Task AsyncMain()
+    {
+        var endpointConfiguration = new EndpointConfiguration("JilSerializer.Perf.Core");
+        endpointConfiguration.UseSerialization<JsonSerializer>();
+        endpointConfiguration.EnableInstallers();
+        endpointConfiguration.PurgeOnStartup(true);
+        endpointConfiguration.UsePersistence<InMemoryPersistence>();
+        endpointConfiguration.UseTransport<MsmqTransport>()
+            .ConnectionString("deadLetter=false;journal=false");
+        endpointConfiguration.DisableFeature<Audit>();
+        endpointConfiguration.SendFailedMessagesTo("error");
+        var endpoint = await Endpoint.Start(endpointConfiguration);
+        try
         {
-            bus.Start();
-            MessageSender.SendMessages(bus);
+            await MessageSender.SendMessages(endpoint);
+        }
+        finally
+        {
+            await endpoint.Stop();
         }
     }
 }
