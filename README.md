@@ -16,15 +16,15 @@ https://nuget.org/packages/NServiceBus.Jil/
 ## Usage
 
 ```
-var busConfig = new BusConfiguration();
-busConfig.UseSerialization<JilSerializer>();
+var config = new EndpointConfiguration("EndpointName");
+config.UseSerialization<JilSerializer>();
 ```
 
 
 ### Customisation 
 
 
-    busConfig.UseSerialization<JilSerializer>()
+    config.UseSerialization<JilSerializer>()
         .Options(
             new Options(
                 prettyPrint: true,
