@@ -8,33 +8,10 @@ Add support for [NServiceBus](http://particular.net/NServiceBus) message seriali
 
 ## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
-https://nuget.org/packages/NServiceBus.Jil/
 
-    PM> Install-Package NServiceBus.Jil
+## Documentation
 
-
-## Usage
-
-```
-var config = new EndpointConfiguration("EndpointName");
-config.UseSerialization<JilSerializer>();
-```
-
-
-### Customisation 
-
-
-    config.UseSerialization<JilSerializer>()
-        .Options(
-            new Options(
-                prettyPrint: true,
-                excludeNulls: true,
-                includeInherited: true));
-
-
-## Currently not supported
-
-Usages of `DataBusProperty<T>` since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
+https://docs.particular.net/nservicebus/serialization/jil
 
 
 ## Icon
