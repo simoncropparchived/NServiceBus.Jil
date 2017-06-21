@@ -33,7 +33,6 @@ namespace NServiceBus.Jil
             {
                 this.options = options;
             }
-
             if (contentType == null)
             {
                 ContentType = ContentTypes.Json;
@@ -44,15 +43,9 @@ namespace NServiceBus.Jil
             }
 
 
-            this.writerCreator = writerCreator ?? (stream =>
-            {
-                return new StreamWriter(stream, Encoding.UTF8, 1024,true);
-            });
+            this.writerCreator = writerCreator ?? (stream => new StreamWriter(stream, Encoding.UTF8, 1024,true));
 
-            this.readerCreator = readerCreator ?? (stream =>
-            {
-                return new StreamReader(stream, Encoding.UTF8,true, 1024, true);
-            });
+            this.readerCreator = readerCreator ?? (stream => new StreamReader(stream, Encoding.UTF8,true, 1024, true));
         }
 
         public void Serialize(object message, Stream stream)
