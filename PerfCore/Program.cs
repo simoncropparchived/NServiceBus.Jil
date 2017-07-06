@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Features;
 
@@ -8,9 +6,6 @@ class Program
 {
     public static void Main()
     {
-        //HACK: Force US culture to work around https://github.com/dotnet/coreclr/issues/12668
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
         AsyncMain().GetAwaiter().GetResult();
     }
 
