@@ -16,6 +16,7 @@ class Program
         endpointConfiguration.UseSerialization<JilSerializer>();
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
+        endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.SendFailedMessagesTo("error");
         var endpoint = await Endpoint.Start(endpointConfiguration);
         try

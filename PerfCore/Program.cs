@@ -4,7 +4,7 @@ using NServiceBus.Features;
 
 class Program
 {
-    static void Main()
+    public static void Main()
     {
         AsyncMain().GetAwaiter().GetResult();
     }
@@ -16,8 +16,7 @@ class Program
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.PurgeOnStartup(true);
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
-        endpointConfiguration.UseTransport<MsmqTransport>()
-            .ConnectionString("deadLetter=false;journal=false");
+        endpointConfiguration.UseTransport<LearningTransport>();
         endpointConfiguration.DisableFeature<Audit>();
         endpointConfiguration.SendFailedMessagesTo("error");
         var endpoint = await Endpoint.Start(endpointConfiguration);
