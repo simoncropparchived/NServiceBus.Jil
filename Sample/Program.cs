@@ -5,7 +5,7 @@ using NServiceBus.Jil;
 
 class Program
 {
-    static void Main()
+    public static void Main()
     {
         AsyncMain().GetAwaiter().GetResult();
     }
