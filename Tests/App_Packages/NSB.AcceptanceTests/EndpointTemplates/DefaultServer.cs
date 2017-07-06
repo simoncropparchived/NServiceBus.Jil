@@ -1,4 +1,7 @@
-﻿namespace NServiceBus.AcceptanceTests.EndpointTemplates
+﻿using Jil;
+using NServiceBus.Jil;
+
+namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
     using System;
     using System.Collections.Generic;
@@ -41,7 +44,11 @@
             await configuration.DefineTransport(runDescriptor, endpointConfiguration).ConfigureAwait(false);
 
             configuration.RegisterComponentsAndInheritanceHierarchy(runDescriptor);
-
+            var serialization = configuration.UseSerialization<JilSerializer>();
+            var options = new Options(
+                includeInherited: true
+                            );
+            serialization.Options(options);
             await configuration.DefinePersistence(runDescriptor, endpointConfiguration).ConfigureAwait(false);
 
             configuration.GetSettings().SetDefault("ScaleOut.UseSingleBrokerQueue", true);

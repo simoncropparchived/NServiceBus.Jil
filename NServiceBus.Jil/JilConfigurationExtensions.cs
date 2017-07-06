@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Jil;
-using NServiceBus.Configuration.AdvanceExtensibility;
+using NServiceBus.Configuration.AdvancedExtensibility;
 using NServiceBus.Jil;
 using NServiceBus.Serialization;
 using NServiceBus.Settings;
