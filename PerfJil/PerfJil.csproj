@@ -7,7 +7,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.0.0-alpha0031" />
+    <PackageReference Include="NServiceBus" Version="7.0.0-alpha*" />
     <PackageReference Include="Jil" Version="2.15.1" />
     <PackageReference Include="Sigil" Version="4.7.0" />
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
