@@ -3,16 +3,14 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netcoreapp2.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RuntimeIdentifier>win10-x86</RuntimeIdentifier>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="7.0.0-alpha*" />
-    <PackageReference Include="Jil" Version="2.15.1" />
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.*" />
+    <PackageReference Include="System.Runtime" Version="4.*" />
   </ItemGroup>
 </Project>

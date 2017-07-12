@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net462;netcoreapp2.0</TargetFrameworks>
-    <WarningLevel>4</WarningLevel>
+    <TargetFrameworks>net452;netcoreapp2.0</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -22,9 +21,9 @@
 
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="[7.0.0-alpha*, 8.0.0)" />
-    <PackageReference Include="Jil" Version="[2.15.0, 3.0.0)" />
+    <PackageReference Include="Jil" Version="[2.*, 3.0.0)" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <PackageReference Include="System.Runtime" Version="4.2.0" />
+    <PackageReference Include="System.Runtime" Version="4.*" />
   </ItemGroup>
 </Project>
