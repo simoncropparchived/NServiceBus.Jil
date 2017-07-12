@@ -3,11 +3,12 @@
   <PropertyGroup>
     <TargetFrameworks>net452;netcoreapp2.0</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
     <PackageId>NServiceBus.Jil</PackageId>
-    <PackageVersion>2.1.0-beta001</PackageVersion>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <FileVersion>2.1.0</FileVersion>
+    <InformationalVersion>$(FileVersion)</InformationalVersion>
+    <PackageVersion>$(FileVersion)-beta001</PackageVersion>
     <Authors>Simon Cropp</Authors>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -15,7 +16,6 @@
     <PackageTags>NServiceBus, Jil, Json</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NServiceBus.Jil/master/Icon/package_icon.png</PackageIconUrl>
     <PackageProjectUrl>https://docs.particular.net/nuget/$(PackageId)</PackageProjectUrl>
-    <PackageOutputPath>$(SolutionDir)NuGetBuild</PackageOutputPath>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
