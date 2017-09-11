@@ -2,13 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageId>NServiceBus.Jil</PackageId>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
-    <FileVersion>3.0.0</FileVersion>
-    <InformationalVersion>$(FileVersion)</InformationalVersion>
-    <PackageVersion>$(FileVersion)-beta001</PackageVersion>
     <Authors>Simon Cropp</Authors>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -17,14 +11,13 @@
     <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NServiceBus.Jil/master/Icon/package_icon.png</PackageIconUrl>
     <PackageProjectUrl>https://docs.particular.net/nuget/$(PackageId)</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>..\nugets</PackageOutputPath>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NServiceBus" Version="[7.0.0-*, 8.0.0)" />
     <PackageReference Include="Jil" Version="[2.15.1, 3.0.0)" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <PackageReference Include="System.Runtime" Version="4.*" />
+    <PackageReference Include="GitVersionTask" Version="4.0.0-*" PrivateAssets="All" />
   </ItemGroup>
   <Target Name="IncludePDBsInPackage">
     <ItemGroup>
