@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="6.3.4" />
-    <PackageReference Include="Jil" Version="2.15.1" />
-    <PackageReference Include="Sigil" Version="4.7.0" />
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="System.IO.Compression" Version="4.*" />
+    <PackageReference Include="System.Runtime" Version="4.*" />
   </ItemGroup>
 </Project>
