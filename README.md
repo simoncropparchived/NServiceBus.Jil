@@ -1,9 +1,9 @@
-![Icon](https://raw.githubusercontent.com/SimonCropp/NServiceBus.Jil/master/Icon/package_icon.png)
+![Icon](https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Jil/master/icon.png)
 
 NServiceBus.Jil
 ===========================
 
-Add support for [NServiceBus](http://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
 
 ## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.Jil/)
@@ -15,7 +15,7 @@ https://nuget.org/packages/NServiceBus.Jil/
 
 ## Documentation
 
-https://docs.particular.net/nservicebus/serialization/jil
+https://docs.particular.net/nuget/NServiceBus.Jil
 
 
 ## Icon
