@@ -8,13 +8,11 @@ using NServiceBus.Settings;
 
 namespace NServiceBus
 {
-
     /// <summary>
     /// Extensions for <see cref="SerializationExtensions{T}"/> to manipulate how messages are serialized via Jil.
     /// </summary>
     public static class JilConfigurationExtensions
     {
-
         /// <summary>
         /// Configures the <see cref="Options"/> to use.
         /// </summary>
@@ -53,7 +51,6 @@ namespace NServiceBus
         {
             return settings.GetOrDefault<string>("NServiceBus.Jil.ContentTypeKey");
         }
-
 
         /// <summary>
         /// Configures the <see cref="TextReader"/> creator of JSON stream.

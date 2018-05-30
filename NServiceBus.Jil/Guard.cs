@@ -1,25 +1,21 @@
 ﻿using System;
 
-namespace NServiceBus.Jil
+static class Guard
 {
-    static class Guard
+    // ReSharper disable UnusedParameter.Global
+    public static void AgainstNull(object value, string argumentName)
     {
-
-        // ReSharper disable UnusedParameter.Global
-        public static void AgainstNull(object value, string argumentName)
+        if (value == null)
         {
-            if (value == null)
-            {
-                throw new ArgumentNullException(argumentName);
-            }
+            throw new ArgumentNullException(argumentName);
         }
+    }
 
-        public static void AgainstNullOrEmpty(string value, string argumentName)
+    public static void AgainstNullOrEmpty(string value, string argumentName)
+    {
+        if (string.IsNullOrWhiteSpace(value))
         {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentNullException(argumentName);
-            }
+            throw new ArgumentNullException(argumentName);
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System.Diagnostics;
 using Jil;
-using NUnit.Framework;
+using Xunit;
 
-[TestFixture]
-class JilTests
+public class JilTests
 {
     Options options = new Options(
         prettyPrint: false,
@@ -12,7 +11,7 @@ class JilTests
         dateFormat: DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch,
         includeInherited: true);
 
-    [Test]
+    [Fact]
     public void Simple()
     {
         var person = new Person
@@ -23,7 +22,7 @@ class JilTests
         Trace.WriteLine(serialize);
     }
 
-    [Test]
+    [Fact]
     public void Inherited()
     {
         var child = new Child

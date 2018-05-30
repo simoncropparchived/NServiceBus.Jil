@@ -1,11 +1,10 @@
-﻿using NServiceBus.MessageInterfaces;
+﻿using System;
+using NServiceBus.MessageInterfaces;
+using NServiceBus.Serialization;
 using NServiceBus.Settings;
 
 namespace NServiceBus.Jil
 {
-    using System;
-    using Serialization;
-
     /// <summary>
     /// Defines the capabilities of the Jil serializer
     /// </summary>
@@ -16,6 +15,7 @@ namespace NServiceBus.Jil
         /// </summary>
         public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
         {
+            Guard.AgainstNull(settings, nameof(settings));
             return mapper =>
             {
                 var readerCreator = settings.GetReaderCreator();
@@ -24,7 +24,6 @@ namespace NServiceBus.Jil
                 var contentTypeKey = settings.GetContentTypeKey();
                 return new JsonMessageSerializer(mapper, options, contentTypeKey, readerCreator, writerCreator);
             };
-
         }
     }
 }
