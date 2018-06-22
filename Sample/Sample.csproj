@@ -5,14 +5,10 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <PackageReference Include="System.IO.Compression" Version="4.*" />
-    <PackageReference Include="System.Runtime" Version="4.*" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
   </ItemGroup>
 </Project>
