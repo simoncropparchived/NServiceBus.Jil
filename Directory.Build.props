@@ -11,6 +11,7 @@
     <PackageTags>NServiceBus, Jil</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Jil/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://docs.particular.net/nuget/NServiceBus.Jil</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NServiceBusExtensions/NServiceBus.Jil</RepositoryUrl>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <DebugType>embedded</DebugType>
