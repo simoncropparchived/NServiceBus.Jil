@@ -1,9 +1,4 @@
-![Icon](https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Jil/master/icon.png)
-
-NServiceBus.Jil
-===========================
-
-Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.Jil/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
 
 <!--- StartOpenCollectiveBackers -->
