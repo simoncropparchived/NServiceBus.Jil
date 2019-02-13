@@ -7,6 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
 </Project>
