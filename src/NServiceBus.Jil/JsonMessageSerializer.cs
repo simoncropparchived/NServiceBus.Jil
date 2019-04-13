@@ -42,9 +42,23 @@ class JsonMessageSerializer : IMessageSerializer
         }
 
 
-        this.writerCreator = writerCreator ?? (stream => new StreamWriter(stream, Encoding.UTF8, 1024, true));
+        if (writerCreator == null)
+        {
+            this.writerCreator = stream => new StreamWriter(stream, Encoding.UTF8, 1024, true);
+        }
+        else
+        {
+            this.writerCreator = writerCreator;
+        }
 
-        this.readerCreator = readerCreator ?? (stream => new StreamReader(stream, Encoding.UTF8, true, 1024, true));
+        if (readerCreator == null)
+        {
+            this.readerCreator = stream => new StreamReader(stream, Encoding.UTF8, true, 1024, true);
+        }
+        else
+        {
+            this.readerCreator = readerCreator;
+        }
     }
 
     public void Serialize(object message, Stream stream)

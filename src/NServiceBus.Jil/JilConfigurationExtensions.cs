@@ -22,7 +22,7 @@ namespace NServiceBus
         {
             Guard.AgainstNull(config, nameof(config));
             var settings = config.GetSettings();
-            settings.Set<Options>(options);
+            settings.Set(options);
         }
 
         internal static Options GetOptions(this ReadOnlySettings settings)

@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics;
 using Jil;
 using Xunit;
+using Xunit.Abstractions;
 
-public class JilTests
+public class JilTests :
+    XunitLoggingBase
 {
     Options options = new Options(
         prettyPrint: false,
@@ -31,6 +33,11 @@ public class JilTests
         };
         var serialize = JSON.Serialize(child, options);
         Trace.WriteLine(serialize);
+    }
+
+    public JilTests(ITestOutputHelper output) : 
+        base(output)
+    {
     }
 }
 
