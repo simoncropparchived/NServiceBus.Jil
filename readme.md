@@ -29,8 +29,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 https://nuget.org/packages/NServiceBus.Jil/
 
-    PM> Install-Package NServiceBus.Jil
-
 
 ## Documentation
 
