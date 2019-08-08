@@ -1,4 +1,4 @@
-<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.Jil/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -25,9 +25,9 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
-## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg)](https://www.nuget.org/packages/NServiceBus.Jil/)
+## NuGet package
 
-https://nuget.org/packages/NServiceBus.Jil/
+https://nuget.org/packages/NServiceBus.Jil/ [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Jil.svg)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
 
 ## Documentation
@@ -37,4 +37,4 @@ https://docs.particular.net/nuget/NServiceBus.Jil
 
 ## Icon
 
-<a href="http://thenounproject.com/term/eagle/58506/" target="_blank">Eagle</a> designed by <a href="http://thenounproject.com/mte/" target="_blank">m. turan ercan</a> from The Noun Project
+[Eagle](https://thenounproject.com/term/eagle/58506/) designed by [m. turan ercan](https://thenounproject.com/mte/) from [The Noun Project](https://thenounproject.com).
