@@ -4,5 +4,6 @@
     <Version>4.0.1</Version>
     <PackageTags>NServiceBus, Jil</PackageTags>
     <PackageProjectUrl>https://docs.particular.net/nuget/NServiceBus.Jil</PackageProjectUrl>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 </Project>
