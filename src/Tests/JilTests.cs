@@ -4,7 +4,7 @@ using Xunit;
 using Xunit.Abstractions;
 
 public class JilTests :
-    XunitLoggingBase
+    XunitApprovalBase
 {
     Options options = new Options(
         prettyPrint: false,
