@@ -43,8 +43,10 @@ public class JilTests :
 
 class Person
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }
-class Child: Person
+
+class Child :
+    Person
 {
 }

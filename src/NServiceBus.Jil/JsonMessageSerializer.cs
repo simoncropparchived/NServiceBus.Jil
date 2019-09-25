@@ -97,7 +97,7 @@ class JsonMessageSerializer : IMessageSerializer
 
     static IEnumerable<Type> FindRootTypes(IEnumerable<Type> messageTypesToDeserialize)
     {
-        Type currentRoot = null;
+        Type? currentRoot = null;
         foreach (var type in messageTypesToDeserialize)
         {
             if (currentRoot == null)
