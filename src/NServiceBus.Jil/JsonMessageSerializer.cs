@@ -63,10 +63,8 @@ class JsonMessageSerializer : IMessageSerializer
 
     public void Serialize(object message, Stream stream)
     {
-        using (var streamWriter = writerCreator(stream))
-        {
-            JSON.Serialize(message, streamWriter, options);
-        }
+        using var streamWriter = writerCreator(stream);
+        JSON.Serialize(message, streamWriter, options);
     }
 
     public object[] Deserialize(Stream stream, IList<Type> messageTypes)
@@ -81,10 +79,8 @@ class JsonMessageSerializer : IMessageSerializer
             {
                 var messageType = GetMappedType(rootType);
                 stream.Seek(0, SeekOrigin.Begin);
-                using (var streamReader = readerCreator(stream))
-                {
-                    return JSON.Deserialize(streamReader, messageType, options);
-                }
+                using var streamReader = readerCreator(stream);
+                return JSON.Deserialize(streamReader, messageType, options);
             })
             .ToArray();
     }

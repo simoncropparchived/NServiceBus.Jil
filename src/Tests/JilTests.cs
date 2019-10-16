@@ -35,7 +35,7 @@ public class JilTests :
         Trace.WriteLine(serialize);
     }
 
-    public JilTests(ITestOutputHelper output) : 
+    public JilTests(ITestOutputHelper output) :
         base(output)
     {
     }
