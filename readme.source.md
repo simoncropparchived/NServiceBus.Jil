@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> NServiceBus.Jil
 
-[![Build status](https://ci.appveyor.com/api/projects/status/oab6rmnc297vyyh5/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.Jil)
+[![Build status](https://ci.appveyor.com/api/projects/status/oab6rmnc297vyyh5/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-Jil)
 [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Jil.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
 Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
