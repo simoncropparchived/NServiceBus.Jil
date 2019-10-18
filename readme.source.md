@@ -1,4 +1,11 @@
-<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+# <img src="/src/icon.png" height="30px"> NServiceBus.Jil
+
+[![Build status](https://ci.appveyor.com/api/projects/status/oab6rmnc297vyyh5/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.Jil)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Jil.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.Jil/)
+
+Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+
+toc
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -28,11 +35,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 toc
 
 
-## NuGet package
-
-https://nuget.org/packages/NServiceBus.Jil/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Jil.svg)](https://www.nuget.org/packages/NServiceBus.Jil/)
-
-
 ## Usage
 
 snippet: JilSerialization
@@ -59,14 +61,21 @@ Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/
 snippet: JilCustomWriter
 
 
-include: custom-contenttype-key
+### Custom content key
+
+When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers.md#serialization-headers-nservicebus-contenttype)).
 
 snippet: JilContentTypeKey
 
 
 ## Currently not supported
 
-Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](/nservicebus/messaging/databus) is supported.
+Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
+
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

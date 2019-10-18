@@ -8,7 +8,8 @@ namespace NServiceBus.Jil
     /// <summary>
     /// Defines the capabilities of the Jil serializer
     /// </summary>
-    public class JilSerializer : SerializationDefinition
+    public class JilSerializer :
+        SerializationDefinition
     {
         /// <summary>
         /// <see cref="SerializationDefinition.Configure"/>

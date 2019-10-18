@@ -59,6 +59,4 @@ class Usage
 
         #endregion
     }
-
-
 }

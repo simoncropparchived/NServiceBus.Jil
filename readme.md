@@ -5,7 +5,14 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+# <img src="/src/icon.png" height="30px"> NServiceBus.Jil
+
+[![Build status](https://ci.appveyor.com/api/projects/status/oab6rmnc297vyyh5/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NServiceBus.Jil)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Jil.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.Jil/)
+
+Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
+
+toc
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -35,19 +42,17 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <!-- toc -->
 ## Contents
 
-  * [NuGet package](#nuget-package)
+  * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
   * [Usage](#usage)
     * [Custom settings](#custom-settings)
     * [Custom reader](#custom-reader)
     * [Custom writer](#custom-writer)
+    * [Custom content key](#custom-content-key)
   * [Currently not supported](#currently-not-supported)
 <!-- endtoc -->
 
-
-
-## NuGet package
-
-https://nuget.org/packages/NServiceBus.Jil/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Jil.svg)](https://www.nuget.org/packages/NServiceBus.Jil/)
 
 
 ## Usage
@@ -88,12 +93,9 @@ Customize the creation of the [JsonReader](https://www.newtonsoft.com/json/help/
 <a id='snippet-jilcustomreader'/></a>
 ```cs
 var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
-serialization.ReaderCreator(stream =>
-{
-    return new StreamReader(stream, Encoding.UTF8);
-});
+serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L35-L43) / [anchor](#snippet-jilcustomreader)</sup>
+<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L35-L40) / [anchor](#snippet-jilcustomreader)</sup>
 <!-- endsnippet -->
 
 
@@ -105,16 +107,15 @@ Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/
 <a id='snippet-jilcustomwriter'/></a>
 ```cs
 var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
-serialization.WriterCreator(stream =>
-{
-    return new StreamWriter(stream, Encoding.UTF8);
-});
+serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L48-L56) / [anchor](#snippet-jilcustomwriter)</sup>
+<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L45-L50) / [anchor](#snippet-jilcustomwriter)</sup>
 <!-- endsnippet -->
 
 
-include: custom-contenttype-key
+### Custom content key
+
+When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers.md#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: JilContentTypeKey -->
 <a id='snippet-jilcontenttypekey'/></a>
@@ -122,13 +123,18 @@ include: custom-contenttype-key
 var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L61-L66) / [anchor](#snippet-jilcontenttypekey)</sup>
+<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L55-L60) / [anchor](#snippet-jilcontenttypekey)</sup>
 <!-- endsnippet -->
 
 
 ## Currently not supported
 
-Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](/nservicebus/messaging/databus) is supported.
+Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
+
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

@@ -8,7 +8,8 @@ using NServiceBus;
 using NServiceBus.MessageInterfaces;
 using NServiceBus.Serialization;
 
-class JsonMessageSerializer : IMessageSerializer
+class JsonMessageSerializer :
+    IMessageSerializer
 {
     IMessageMapper messageMapper;
     Func<Stream, TextReader> readerCreator;
