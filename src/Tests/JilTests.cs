@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
 using Jil;
+using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
 
 public class JilTests :
-    XunitApprovalBase
+    VerifyBase
 {
     Options options = new Options(
         prettyPrint: false,
