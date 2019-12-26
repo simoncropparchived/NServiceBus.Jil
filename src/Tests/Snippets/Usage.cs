@@ -6,16 +6,16 @@ using NServiceBus.Jil;
 
 class Usage
 {
-    Usage(EndpointConfiguration endpointConfiguration)
+    Usage(EndpointConfiguration configuration)
     {
         #region JilSerialization
 
-        endpointConfiguration.UseSerialization<JilSerializer>();
+        configuration.UseSerialization<JilSerializer>();
 
         #endregion
     }
 
-    void CustomSettings(EndpointConfiguration endpointConfiguration)
+    void CustomSettings(EndpointConfiguration configuration)
     {
         #region JilCustomSettings
 
@@ -24,37 +24,37 @@ class Usage
             dateFormat: DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch,
             includeInherited: true);
 
-        var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+        var serialization = configuration.UseSerialization<JilSerializer>();
         serialization.Options(options);
 
         #endregion
     }
 
-    void CustomReader(EndpointConfiguration endpointConfiguration)
+    void CustomReader(EndpointConfiguration configuration)
     {
         #region JilCustomReader
 
-        var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+        var serialization = configuration.UseSerialization<JilSerializer>();
         serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 
         #endregion
     }
 
-    void CustomWriter(EndpointConfiguration endpointConfiguration)
+    void CustomWriter(EndpointConfiguration configuration)
     {
         #region JilCustomWriter
 
-        var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+        var serialization = configuration.UseSerialization<JilSerializer>();
         serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 
         #endregion
     }
 
-    void ContentTypeKey(EndpointConfiguration endpointConfiguration)
+    void ContentTypeKey(EndpointConfiguration configuration)
     {
         #region JilContentTypeKey
 
-        var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+        var serialization = configuration.UseSerialization<JilSerializer>();
         serialization.ContentTypeKey("custom-key");
 
         #endregion
