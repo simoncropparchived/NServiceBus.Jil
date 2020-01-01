@@ -21,7 +21,7 @@ toc
 
 ## Community backed
 
-**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/blob/master/readme.md#licensingpatron-faq)**
+**It is expected that all developers [become a Patron](https://opencollective.com/nservicebusextensions/order/6976) to use any of these libraries. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
 
 
 ### Sponsors
@@ -50,9 +50,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
     * [Custom reader](#custom-reader)
     * [Custom writer](#custom-writer)
     * [Custom content key](#custom-content-key)
-  * [Currently not supported](#currently-not-supported)
-<!-- endtoc -->
-
+  * [Currently not supported](#currently-not-supported)<!-- endtoc -->
 
 
 ## Usage
@@ -60,9 +58,9 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <!-- snippet: JilSerialization -->
 <a id='snippet-jilserialization'/></a>
 ```cs
-endpointConfiguration.UseSerialization<JilSerializer>();
+configuration.UseSerialization<JilSerializer>();
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L11-L15) / [anchor](#snippet-jilserialization)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L11-L15' title='File snippet `jilserialization` was extracted from'>snippet source</a> | <a href='#snippet-jilserialization' title='Navigate to start of snippet `jilserialization`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -78,10 +76,10 @@ var options = new Options(
     dateFormat: DateTimeFormat.MicrosoftStyleMillisecondsSinceUnixEpoch,
     includeInherited: true);
 
-var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.Options(options);
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L20-L30) / [anchor](#snippet-jilcustomsettings)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L20-L30' title='File snippet `jilcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomsettings' title='Navigate to start of snippet `jilcustomsettings`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -92,10 +90,10 @@ Customize the creation of the [JsonReader](https://www.newtonsoft.com/json/help/
 <!-- snippet: JilCustomReader -->
 <a id='snippet-jilcustomreader'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L35-L40) / [anchor](#snippet-jilcustomreader)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L35-L40' title='File snippet `jilcustomreader` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomreader' title='Navigate to start of snippet `jilcustomreader`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -106,10 +104,10 @@ Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/
 <!-- snippet: JilCustomWriter -->
 <a id='snippet-jilcustomwriter'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L45-L50) / [anchor](#snippet-jilcustomwriter)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L45-L50' title='File snippet `jilcustomwriter` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomwriter' title='Navigate to start of snippet `jilcustomwriter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -120,10 +118,10 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 <!-- snippet: JilContentTypeKey -->
 <a id='snippet-jilcontenttypekey'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<JilSerializer>();
+var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L55-L60) / [anchor](#snippet-jilcontenttypekey)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L55-L60' title='File snippet `jilcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-jilcontenttypekey' title='Navigate to start of snippet `jilcontenttypekey`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
