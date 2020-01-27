@@ -40,7 +40,8 @@ Thanks to the current backers.
     * [Custom reader](#custom-reader)
     * [Custom writer](#custom-writer)
     * [Custom content key](#custom-content-key)
-  * [Currently not supported](#currently-not-supported)<!-- endtoc -->
+  * [Currently not supported](#currently-not-supported)
+  * [Security contact information](#security-contact-information)<!-- endtoc -->
 
 
 ## Usage
@@ -120,9 +121,9 @@ serialization.ContentTypeKey("custom-key");
 Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
 
 
-## Release Notes
+## Security contact information
 
-See [closed milestones](../../milestones?state=closed).
+To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
