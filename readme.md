@@ -35,8 +35,6 @@ Thanks to the current backers.
 ## Contents
 
   * [Community backed](#community-backed)
-    * [Sponsors](#sponsors)
-    * [Patrons](#patrons)
   * [Usage](#usage)
     * [Custom settings](#custom-settings)
     * [Custom reader](#custom-reader)
