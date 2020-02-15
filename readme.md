@@ -43,6 +43,8 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 ## Contents
 
   * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
   * [Usage](#usage)
     * [Custom settings](#custom-settings)
     * [Custom reader](#custom-reader)
