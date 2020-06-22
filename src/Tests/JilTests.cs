@@ -1,11 +1,8 @@
 ﻿using System.Diagnostics;
 using Jil;
-using VerifyXunit;
 using Xunit;
-using Xunit.Abstractions;
 
-public class JilTests :
-    VerifyBase
+public class JilTests
 {
     Options options = new Options(
         prettyPrint: false,
@@ -34,11 +31,6 @@ public class JilTests :
         };
         var serialize = JSON.Serialize(child, options);
         Trace.WriteLine(serialize);
-    }
-
-    public JilTests(ITestOutputHelper output) :
-        base(output)
-    {
     }
 }
 
