@@ -64,7 +64,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Usage
 
 <!-- snippet: JilSerialization -->
-<a id='snippet-jilserialization'/></a>
+<a id='snippet-jilserialization'></a>
 ```cs
 configuration.UseSerialization<JilSerializer>();
 ```
@@ -77,7 +77,7 @@ configuration.UseSerialization<JilSerializer>();
 Customizes the instance of `Options` used for serialization.
 
 <!-- snippet: JilCustomSettings -->
-<a id='snippet-jilcustomsettings'/></a>
+<a id='snippet-jilcustomsettings'></a>
 ```cs
 var options = new Options(
     prettyPrint: true,
@@ -96,7 +96,7 @@ serialization.Options(options);
 Customize the creation of the [JsonReader](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonReader.htm).
 
 <!-- snippet: JilCustomReader -->
-<a id='snippet-jilcustomreader'/></a>
+<a id='snippet-jilcustomreader'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
@@ -110,7 +110,7 @@ serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonWriter.htm).
 
 <!-- snippet: JilCustomWriter -->
-<a id='snippet-jilcustomwriter'/></a>
+<a id='snippet-jilcustomwriter'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
@@ -124,7 +124,7 @@ serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: JilContentTypeKey -->
-<a id='snippet-jilcontenttypekey'/></a>
+<a id='snippet-jilcontenttypekey'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
