@@ -58,7 +58,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
     * [Custom writer](#custom-writer)
     * [Custom content key](#custom-content-key)
   * [Currently not supported](#currently-not-supported)
-  * [Security contact information](#security-contact-information)<!-- endtoc -->
+  * [Security contact information](#security-contact-information)<!-- endToc -->
 
 
 ## Usage
@@ -69,7 +69,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 configuration.UseSerialization<JilSerializer>();
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L11-L15' title='File snippet `jilserialization` was extracted from'>snippet source</a> | <a href='#snippet-jilserialization' title='Navigate to start of snippet `jilserialization`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Custom settings
@@ -88,7 +88,7 @@ var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.Options(options);
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L20-L30' title='File snippet `jilcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomsettings' title='Navigate to start of snippet `jilcustomsettings`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Custom reader
@@ -102,7 +102,7 @@ var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L35-L40' title='File snippet `jilcustomreader` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomreader' title='Navigate to start of snippet `jilcustomreader`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Custom writer
@@ -116,7 +116,7 @@ var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L45-L50' title='File snippet `jilcustomwriter` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomwriter' title='Navigate to start of snippet `jilcustomwriter`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Custom content key
@@ -130,7 +130,7 @@ var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L55-L60' title='File snippet `jilcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-jilcontenttypekey' title='Navigate to start of snippet `jilcontenttypekey`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Currently not supported
