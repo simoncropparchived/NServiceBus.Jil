@@ -64,11 +64,11 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Usage
 
 <!-- snippet: JilSerialization -->
-<a id='snippet-jilserialization'></a>
+<a id='282c3d5b'></a>
 ```cs
 configuration.UseSerialization<JilSerializer>();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L11-L15' title='File snippet `jilserialization` was extracted from'>snippet source</a> | <a href='#snippet-jilserialization' title='Navigate to start of snippet `jilserialization`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L11-L15' title='Snippet source file'>snippet source</a> | <a href='#282c3d5b' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -77,7 +77,7 @@ configuration.UseSerialization<JilSerializer>();
 Customizes the instance of `Options` used for serialization.
 
 <!-- snippet: JilCustomSettings -->
-<a id='snippet-jilcustomsettings'></a>
+<a id='5c162e01'></a>
 ```cs
 var options = new Options(
     prettyPrint: true,
@@ -87,7 +87,7 @@ var options = new Options(
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.Options(options);
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L20-L30' title='File snippet `jilcustomsettings` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomsettings' title='Navigate to start of snippet `jilcustomsettings`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L20-L30' title='Snippet source file'>snippet source</a> | <a href='#5c162e01' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -96,12 +96,12 @@ serialization.Options(options);
 Customize the creation of the [JsonReader](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonReader.htm).
 
 <!-- snippet: JilCustomReader -->
-<a id='snippet-jilcustomreader'></a>
+<a id='cf9a6ff3'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L35-L40' title='File snippet `jilcustomreader` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomreader' title='Navigate to start of snippet `jilcustomreader`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L35-L40' title='Snippet source file'>snippet source</a> | <a href='#cf9a6ff3' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -110,12 +110,12 @@ serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonWriter.htm).
 
 <!-- snippet: JilCustomWriter -->
-<a id='snippet-jilcustomwriter'></a>
+<a id='96266280'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L45-L50' title='File snippet `jilcustomwriter` was extracted from'>snippet source</a> | <a href='#snippet-jilcustomwriter' title='Navigate to start of snippet `jilcustomwriter`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L45-L50' title='Snippet source file'>snippet source</a> | <a href='#96266280' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -124,12 +124,12 @@ serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: JilContentTypeKey -->
-<a id='snippet-jilcontenttypekey'></a>
+<a id='8ce0b7bb'></a>
 ```cs
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L55-L60' title='File snippet `jilcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-jilcontenttypekey' title='Navigate to start of snippet `jilcontenttypekey`'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L55-L60' title='Snippet source file'>snippet source</a> | <a href='#8ce0b7bb' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
