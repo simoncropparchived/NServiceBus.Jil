@@ -5,7 +5,6 @@
 
 Add support for [NServiceBus](https://particular.net/NServiceBus) message serialization via [Jil](https://github.com/kevin-montrose/Jil)
 
-toc
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -31,14 +30,6 @@ Thanks to all the backing developers. Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 <!--- EndOpenCollectiveBackers -->
-
-
-## Support via TideLift
-
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-nservicebus.msgpack?utm_source=nuget-nservicebus.msgpack&utm_medium=referral&utm_campaign=enterprise).
-
-
-toc
 
 
 ## Usage
@@ -78,10 +69,6 @@ snippet: JilContentTypeKey
 
 Usages of `DataBusProperty<T>` are not supported since it doesn't have a default constructor. However usage of the [databus convention](https://docs.particular.net/nservicebus/messaging/databus) is supported.
 
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
