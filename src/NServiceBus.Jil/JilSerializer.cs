@@ -16,7 +16,6 @@ namespace NServiceBus.Jil
         /// </summary>
         public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
         {
-            Guard.AgainstNull(settings, nameof(settings));
             return mapper =>
             {
                 var readerCreator = settings.GetReaderCreator();

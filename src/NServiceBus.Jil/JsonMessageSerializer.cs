@@ -17,10 +17,10 @@ class JsonMessageSerializer :
 
     public JsonMessageSerializer(
         IMessageMapper messageMapper,
-        Options options,
-        string contentType,
-        Func<Stream, TextReader> readerCreator,
-        Func<Stream, TextWriter> writerCreator)
+        Options? options,
+        string? contentType,
+        Func<Stream, TextReader>? readerCreator,
+        Func<Stream, TextWriter>? writerCreator)
     {
         this.messageMapper = messageMapper;
 
@@ -72,7 +72,7 @@ class JsonMessageSerializer :
     {
         if (messageTypes == null || !messageTypes.Any())
         {
-            throw new Exception("Jil requires message types to be specified");
+            throw new("Jil requires message types to be specified");
         }
 
         var rootTypes = FindRootTypes(messageTypes);

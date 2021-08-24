@@ -4,7 +4,7 @@ using Xunit;
 
 public class JilTests
 {
-    Options options = new Options(
+    Options options = new(
         prettyPrint: false,
         excludeNulls: false,
         jsonp: false,

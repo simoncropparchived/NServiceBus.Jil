@@ -20,7 +20,6 @@ namespace NServiceBus
         /// <param name="options">The <see cref="Options"/> to use.</param>
         public static void Options(this SerializationExtensions<JilSerializer> config, Options options)
         {
-            Guard.AgainstNull(config, nameof(config));
             var settings = config.GetSettings();
             settings.Set(options);
         }
@@ -41,8 +40,7 @@ namespace NServiceBus
         /// <param name="contentTypeKey">The content type key to use.</param>
         public static void ContentTypeKey(this SerializationExtensions<JilSerializer> config, string contentTypeKey)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNullOrEmpty(contentTypeKey, nameof(contentTypeKey));
+            Guard.AgainstEmpty(contentTypeKey, nameof(contentTypeKey));
             var settings = config.GetSettings();
             settings.Set("NServiceBus.Jil.ContentTypeKey", contentTypeKey);
         }
@@ -59,8 +57,6 @@ namespace NServiceBus
         /// <param name="readerCreator">A delegate that creates a <see cref="TextReader"/> for a <see cref="Stream"/>.</param>
         public static void ReaderCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextReader> readerCreator)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNull(readerCreator, nameof(readerCreator));
             config.GetSettings().Set("NServiceBus.Jil.ReaderCreator", readerCreator);
         }
 
@@ -76,8 +72,6 @@ namespace NServiceBus
         /// <param name="writerCreator">A delegate that creates a <see cref="TextWriter"/> for a <see cref="Stream"/>.</param>
         public static void WriterCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextWriter> writerCreator)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNull(writerCreator, nameof(writerCreator));
             config.GetSettings().Set("NServiceBus.Jil.WriterCreator", writerCreator);
         }
 
