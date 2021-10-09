@@ -46,7 +46,7 @@ Thanks to all the backing developers. Support this project by [becoming a patron
 ```cs
 configuration.UseSerialization<JilSerializer>();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L11-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilserialization' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L9-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilserialization' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -65,7 +65,7 @@ var options = new Options(
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.Options(options);
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L20-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomsettings' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L18-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomsettings' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -79,7 +79,7 @@ Customize the creation of the [JsonReader](https://www.newtonsoft.com/json/help/
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ReaderCreator(stream => new StreamReader(stream, Encoding.UTF8));
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L35-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomreader' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L33-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomreader' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -93,7 +93,7 @@ Customize the creation of the [JsonWriter](https://www.newtonsoft.com/json/help/
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.WriterCreator(stream => new StreamWriter(stream, Encoding.UTF8));
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L45-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomwriter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L43-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcustomwriter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -107,7 +107,7 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 var serialization = configuration.UseSerialization<JilSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L55-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcontenttypekey' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L53-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-jilcontenttypekey' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
