@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Text;
-using Jil;
+﻿using Jil;
 using NServiceBus;
 using NServiceBus.Jil;
 

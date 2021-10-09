@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Jil;
+﻿using Jil;
 using Xunit;
 
 public class JilTests

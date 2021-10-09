@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Jil;
+﻿using Jil;
 using NServiceBus;
 using NServiceBus.MessageInterfaces;
 using NServiceBus.Serialization;
