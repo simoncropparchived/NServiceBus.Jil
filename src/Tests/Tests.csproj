@@ -10,6 +10,6 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.1.0" PrivateAssets="all" />
     <PackageReference Include="Verify.Xunit" Version="13.1.0" />
     <ProjectReference Include="..\NServiceBus.Jil\NServiceBus.Jil.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.59" PrivateAssets="All" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.60" PrivateAssets="all" />
   </ItemGroup>
 </Project>
