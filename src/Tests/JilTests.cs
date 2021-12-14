@@ -1,5 +1,4 @@
 ﻿using Jil;
-using Xunit;
 
 public class JilTests
 {
