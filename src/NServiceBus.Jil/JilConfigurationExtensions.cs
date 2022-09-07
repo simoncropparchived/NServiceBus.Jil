@@ -22,10 +22,8 @@ public static class JilConfigurationExtensions
         settings.Set(options);
     }
 
-    internal static Options GetOptions(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<Options>();
-    }
+    internal static Options GetOptions(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<Options>();
 
     /// <summary>
     /// Configures string to use for <see cref="Headers.ContentType"/> headers.
@@ -43,38 +41,28 @@ public static class JilConfigurationExtensions
         settings.Set("NServiceBus.Jil.ContentTypeKey", contentTypeKey);
     }
 
-    internal static string GetContentTypeKey(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<string>("NServiceBus.Jil.ContentTypeKey");
-    }
+    internal static string GetContentTypeKey(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<string>("NServiceBus.Jil.ContentTypeKey");
 
     /// <summary>
     /// Configures the <see cref="TextReader"/> creator of JSON stream.
     /// </summary>
     /// <param name="config">The <see cref="SerializationExtensions{T}"/> instance.</param>
     /// <param name="readerCreator">A delegate that creates a <see cref="TextReader"/> for a <see cref="Stream"/>.</param>
-    public static void ReaderCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextReader> readerCreator)
-    {
+    public static void ReaderCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextReader> readerCreator) =>
         config.GetSettings().Set("NServiceBus.Jil.ReaderCreator", readerCreator);
-    }
 
-    internal static Func<Stream, TextReader> GetReaderCreator(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<Func<Stream, TextReader>>("NServiceBus.Jil.ReaderCreator");
-    }
+    internal static Func<Stream, TextReader> GetReaderCreator(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<Func<Stream, TextReader>>("NServiceBus.Jil.ReaderCreator");
 
     /// <summary>
     /// Configures the <see cref="TextWriter"/> creator of JSON stream.
     /// </summary>
     /// <param name="config">The <see cref="SerializationExtensions{T}"/> instance.</param>
     /// <param name="writerCreator">A delegate that creates a <see cref="TextWriter"/> for a <see cref="Stream"/>.</param>
-    public static void WriterCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextWriter> writerCreator)
-    {
+    public static void WriterCreator(this SerializationExtensions<JilSerializer> config, Func<Stream, TextWriter> writerCreator) =>
         config.GetSettings().Set("NServiceBus.Jil.WriterCreator", writerCreator);
-    }
 
-    internal static Func<Stream, TextWriter> GetWriterCreator(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<Func<Stream, TextWriter>>("NServiceBus.Jil.WriterCreator");
-    }
+    internal static Func<Stream, TextWriter> GetWriterCreator(this ReadOnlySettings settings) =>
+        settings.GetOrDefault<Func<Stream, TextWriter>>("NServiceBus.Jil.WriterCreator");
 }

@@ -81,10 +81,8 @@ class JsonMessageSerializer :
             .ToArray();
     }
 
-    Type GetMappedType(Type serializedType)
-    {
-        return messageMapper.GetMappedTypeFor(serializedType) ?? serializedType;
-    }
+    Type GetMappedType(Type serializedType) =>
+        messageMapper.GetMappedTypeFor(serializedType) ?? serializedType;
 
 
     static IEnumerable<Type> FindRootTypes(IEnumerable<Type> messageTypesToDeserialize)
